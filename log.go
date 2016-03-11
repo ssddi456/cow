@@ -29,10 +29,10 @@ var (
 	logFile io.Writer
 
 	// make sure logger can be called before initLog
-	errorLog    = log.New(os.Stdout, "[ERROR] ", log.LstdFlags)
-	debugLog    = log.New(os.Stdout, "[DEBUG] ", log.LstdFlags)
-	requestLog  = log.New(os.Stdout, "[>>>>>] ", log.LstdFlags)
-	responseLog = log.New(os.Stdout, "[<<<<<] ", log.LstdFlags)
+	errorLog    = log.New(os.Stdout, "[ERROR] ", log.LstdFlags | log.Lmicroseconds )
+	debugLog    = log.New(os.Stdout, "[DEBUG] ", log.LstdFlags | log.Lmicroseconds )
+	requestLog  = log.New(os.Stdout, "[>>>>>] ", log.LstdFlags | log.Lmicroseconds )
+	responseLog = log.New(os.Stdout, "[<<<<<] ", log.LstdFlags | log.Lmicroseconds )
 
 	verbose  bool
 	colorize bool
